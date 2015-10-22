@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+	<class name="SignalComponents">
+	    	
+		<composite-id>
+      		<key-property name="symbol" column="symbol"/>
+      		<key-property name="signalDate" column="signalDate"/>
+    	</composite-id> 
+
+		<property name="TR" column="TR" />
+		<property name="plusDM1" column="plusDM1" />
+		<property name="minusDM1" column="minusDM1" />
+		<property name="TRn" column="TRn" />
+		<property name="plusDMn" column="plusDMn" />
+		<property name="minusDMn" column="minusDMn" />
+		<property name="diffDIn" column="diffDIn" />
+		<property name="sumDIn" column="sumDIn" />
+		<property name="DX" column="DX" />
+		<property name="ADXn" column="ADXn" />
+		<property name="splitMultiplier" column="splitMultiplier" />
+		<property name="previousSignalType" column="previousSignalType" />
+		<property name="signalType" column="signalType" />
+		<property name="signalPresent" column="signalPresent" />
+	</class>
+</hibernate-mapping>

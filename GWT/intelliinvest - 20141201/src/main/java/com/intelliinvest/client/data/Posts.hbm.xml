@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+	<class name="PostData">
+
+		<id name="postId" column="postId">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="author" column="author" />
+		<property name="title" column="title" />
+		<property name="content" column="content" />
+		<property name="createdTime" column="createdTime"/>
+		<property name="updatedTime" column="updatedTime"/>
+
+	</class>
+</hibernate-mapping>

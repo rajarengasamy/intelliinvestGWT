@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+    <class name="PaymentData">
+   		<composite-id>
+      		<key-property name="noOfStocks" column="noOfStocks"/>
+      		<key-property name="noOfMonths" column="noOfMonths"/>
+    	</composite-id> 
+    	<property name="amount" column="amount"/>
+   		<property name="link" column="link"/>
+   	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+    <class name="UserDetailData">
+    	<id name="mail" column="MAIL">
+    		<generator class="assigned"/>
+    	</id>
+    	<property name="userId" column="USER_ID"/>
+    	<property name="username" column="USERNAME"/>
+    	<property name="password" column="PASSWORD"/>
+    	<property name="phone" column="PHONE"/>
+    	<property name="plan" column="PLAN"/>
+    	<property name="userType" column="USERTYPE"/>
+    	<property name="active" column="ACTIVE"/>
+    	<property name="creationDate" column="CREATION_DATE"/>
+    	<property name="renewalDate" column="RENEWAL_DATE"/>
+    	<property name="expiryDate" column="EXPIRY_DATE"/>
+    	<property name="lastLoginDate" column="LAST_LOGIN_DATE"/>
+    	<property name="sendNotification" column="SEND_NOTIFICATION"/>
+    </class>
+    
+</hibernate-mapping>

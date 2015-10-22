@@ -1,0 +1,109 @@
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="equity,trading,portfolio management,risk return matrix,risk analysis,emerging market,technical analysis,stocks,Narendra Modi,NaMo Effect,Bull,Bear,Finance,returns,Sharpe Ratio,Tata Steel,Tata Motors,INFY,TCS,Sensex,Nifty,MidCap,SmallCap,FMCG,Metals,moneycontrol,options,indices">
+	<meta name="Description" content="Intelliinvest is there to guide you through the ups and downs of the market and help you make informed decision about which stocks to hold to sell or to buy">
+    <style type="text/css">
+    	#intraDayChartDiv {
+				width		: 100%;
+				height		: 100%;
+				font-size	: 11px;
+			}				
+			width	: 100%;
+			height	: 100%;
+		}
+
+        body { overflow:auto }
+        #loading {
+            position: center;
+            padding: 2px;
+            z-index: 20001;
+            text-align:center;
+            valign:center;
+            color:gray;
+        }
+
+        .loadingIndicator {
+            position: center;
+            font: bold 20px Arial, Verdana, sans-serif;
+            padding: 5%;
+            color: #444;
+            text-align:center;
+            color:gray;
+        }
+        
+        #warningMsg {
+        	position: center;
+            font: normal 12px Arial, Verdana, sans-serif;
+            text-align:center;
+            font-color:gray;
+        }
+
+        #loadingMsg {
+        	position: center;
+            font: normal 13px arial, tahoma, sans-serif;
+            text-align:center;
+            color:gray;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/data/images/intelliinvest.ico"/>
+    
+    <title>IntelliInvest</title>
+  </head>
+
+  <body style="background-color:#dedede;">
+
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-2' style="position:absolute;width:0;height:0;border:0"></iframe>
+    <iframe src="javascript:''" id=uploadTarget tabIndex='-3' style="position:relative;width:0;height:0;border:0"></iframe>
+ 
+ 	<div id="loadingWrapper">
+		<div id="loading">
+		    <div class="loadingIndicator">
+		    	<em>IntelliInvest</em>
+		        <br/>
+<!-- 		        <strong id="warningMsg">May take more time when loaded first time</strong> -->
+		        <br/>
+		        <img src="/data/images/banner.jpg"/>
+		        <br/>
+		        <strong id="loadingMsg">Loading styles and images...</strong>
+		    </div>
+		</div>
+	</div>
+ 	
+ 	<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading Graph libraries...';</script>
+ 	
+ 	<script type="text/javascript" src="amcharts/amcharts.js"></script>
+	<script type="text/javascript" src="amcharts/serial.js"></script>
+	<script type="text/javascript" src="amcharts/themes/light.js"></script>
+	<script type="text/javascript" src="amcharts/amstock.js"></script>
+
+ 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/newchart.js"></script>
+    
+    <script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading Core libraries...';</script>
+    
+  	<script src=intelliinvest/sc/modules/ISC_Core.js></script>
+    <script src=intelliinvest/sc/modules/ISC_Foundation.js></script>
+	
+	<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading UI libraries...';</script>
+	
+	<script src=intelliinvest/sc/modules/ISC_Containers.js></script>
+	<script src=intelliinvest/sc/modules/ISC_Grids.js></script>
+	<script src=intelliinvest/sc/modules/ISC_Forms.js></script>
+	<script src=intelliinvest/sc/modules/ISC_Calendar.js></script>
+	<script src=intelliinvest/sc/modules/ISC_RichTextEditor.js></script>
+	
+	<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading Data libraries...';</script>
+	
+	<script src=intelliinvest/sc/modules/ISC_DataBinding.js></script>
+	
+	<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading IntelliInvest libraries...';</script>
+	
+    <script type="text/javascript" src="intelliinvest/intelliinvest.nocache.js"></script>
+    
+  </body>
+  <link type="text/css" rel="stylesheet" href="IntelliInvest.css">
+</html>

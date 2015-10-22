@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>IntelliInvest.html</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+		<filter-name>gzipFilter</filter-name>
+		<filter-class>com.intelliinvest.server.GZipFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>gzipFilter</filter-name>
+   		<url-pattern>*.js</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    	<filter-name>gzipFilter</filter-name>
+    	<url-pattern>*.css</url-pattern>
+  </filter-mapping>
+	
+  <servlet>
+    <servlet-name>stockDetailServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.StockDetailServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>stockDetailServlet</servlet-name>
+    <url-pattern>/intelliinvest/StockDetails</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>intelliInvestDSServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.IntelliInvestDSServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>intelliInvestDSServlet</servlet-name>
+    <url-pattern>/intelliinvest/IntelliInvestDS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.LoginServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.FileUploadServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+    <servlet-name>chartRequestServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.ChartRequestServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+    <servlet-name>newsRequestServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.NewsRequestServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+    <servlet-name>ExportService</servlet-name>
+    <servlet-class>com.intelliinvest.server.ExportServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>initializeService</servlet-name>
+    <servlet-class>com.intelliinvest.server.InitializationServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>utilServlet</servlet-name>
+    <servlet-class>com.intelliinvest.server.UtilServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+      <servlet-name>blogsServlet</servlet-name>
+      <servlet-class>com.intelliinvest.server.BlogsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+       <servlet-name>blogsServlet</servlet-name>
+       <url-pattern>/intelliinvest/blogs</url-pattern>
+   </servlet-mapping>
+   
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/intelliinvest/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <url-pattern>*.up</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>chartRequestServlet</servlet-name>
+    <url-pattern>*.chart</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>newsRequestServlet</servlet-name>
+    <url-pattern>*.ns</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ExportService</servlet-name>
+    <url-pattern>/intelliinvest/ExportService</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>initializeService</servlet-name>
+    <url-pattern>/intelliinvest/initialize</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>utilServlet</servlet-name>
+    <url-pattern>/intelliinvest/util</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

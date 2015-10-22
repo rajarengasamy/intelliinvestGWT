@@ -1,0 +1,106 @@
+.staticWindowCss{
+	font-family: Arial, Verdana, sans-serif; 
+	font-size:13px; 
+	text-align:left; 
+	color:black;
+	background:lightgrey;
+	text-align:justify;
+}
+
+/* for grouping */
+
+.groupNodeRed{
+  font-size:11px;
+  color: #3764a3;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+  background:#FF9966;
+}
+
+.groupNodeGreen{
+  font-size:11px;
+  color: #3764a3;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+  background:#99FF99;
+}
+
+.tallCellGreen{
+	font-weight:bold;color:green;font-family: Arial, Verdana, sans-serif;font-size: 11px;
+}
+
+.tallCellRed{
+	font-weight:bold;color:red;font-family: Arial, Verdana, sans-serif;font-size: 11px;
+}
+
+.imgHeaderButton,
+.imgHeaderButtonOver,
+.imgHeaderButtonDown,
+.imgHeaderButtonSelected,
+.imgHeaderButtonSelectedOver,
+.imgHeaderButtonSelectedDown,
+.sorterButtonSelected,
+.headerButton,
+.headerButtonOver,
+.headerButtonDown,
+.headerButtonSelected,
+.headerButtonSelectedOver,
+.headerButtonSelectedDown,
+.sorterButtonSelected{
+	 font-weight : bold;
+}
+
+.headerButton,
+.imgHeaderButton{
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eff3fb', endColorstr='#dedede');
+}
+
+.imgHeaderButtonOver,
+.imgHeaderButtonDown,
+.imgHeaderButtonSelected,
+.imgHeaderButtonSelectedOver,
+.imgHeaderButtonSelectedDown,
+.sorterButtonSelected,
+.headerButtonOver,
+.headerButtonDown,
+.headerButtonSelected,
+.headerButtonSelectedOver,
+.headerButtonSelectedDown,
+.sorterButtonSelected{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcedb0', endColorstr='#fffaeb');
+}
+
+
+.intelliinvest{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdd1e5', endColorstr='#dedede');
+	background-color: #dedede;
+  	background-image: url("/data/images/background.png");
+  	background-repeat: repeat-x;
+  	background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bdd1e5), color-stop(47%, #afc0d4), color-stop(63%, #b9c7da), color-stop(100%, #d3deee));
+    background-image: -webkit-linear-gradient(top, #bdd1e5 0%, #afc0d4 47%, #b9c7da 63%, #d3deee 100%);
+    background-image: -moz-linear-gradient(top, #bdd1e5 0%, #afc0d4 47%, #b9c7da 63%, #d3deee 100%);
+    background-image: -o-linear-gradient(top, #bdd1e5 0%, #afc0d4 47%, #b9c7da 63%, #d3deee 100%);
+    background-image: linear-gradient(top, #bdd1e5 0%, #afc0d4 47%, #b9c7da 63%, #d3deee 100%);
+}
+
+.clickable {
+	color: grey;
+	font-weight:bold;
+	font-size:12px;
+	text-decoration:underline;
+	cursor: pointer;
+	font-style: italic;
+	font-family: Arial, Verdana, sans-serif;
+	text-align:center; 
+}
+
+.clickableBig {
+	color: grey;
+	font-size:12px;
+	text-decoration:underline;
+	cursor: pointer;
+	font-style: italic;
+	font-family: Arial, Verdana, sans-serif;
+	text-align:center; 
+}

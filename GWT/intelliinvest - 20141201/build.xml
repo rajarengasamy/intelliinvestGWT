@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="IntelliInvest" default="build" basedir=".">
+  <property environment="env"/>
+  <property name="gwt.sdk" value="G:\\eclipse\\plugins\\com.google.gwt.eclipse.sdkbundle_2.5.1\\gwt-2.5.1"/>
+
+  <fail unless="gwt.sdk" message="You must set the GWT_HOME environment variable to point to your GWT SDK"/>
+
+  <path id="project.class.path">
+    <pathelement location="war/WEB-INF/classes"/>
+    <pathelement location="${gwt.sdk}/gwt-user.jar"/>
+    <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
+    <!-- Add any additional non-server libs (such as JUnit) -->
+    <fileset dir="lib" includes="**/*.jar"/>
+    <fileset dir="G:\\smartgwt-4.0" includes="smartgwt.jar"/>
+ 	<pathelement location="../smartgwt.jar"/>
+	
+  </path>
+
+  <target name="libs" description="Copy libs to WEB-INF/lib">
+    <mkdir dir="war/WEB-INF/lib" />
+    <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
+    <copy todir="war/WEB-INF/lib"> 
+      	<fileset dir="lib" includes="*.jar"/>
+    </copy>
+  </target>
+
+  <target name="javac" depends="libs" description="Compile java source">
+    <mkdir dir="war/WEB-INF/classes"/>
+    <javac srcdir="src/main/java" includes="**/*.java" encoding="utf-8"
+        destdir="war/WEB-INF/classes"
+        source="1.5" target="1.5" nowarn="true"
+        debug="true" debuglevel="lines,vars,source">
+      <classpath refid="project.class.path"/>
+    </javac>
+    <copy todir="war/WEB-INF/classes">
+      <fileset dir="src/main/java" includes="**/*.hbm.xml"/>
+    </copy>
+     <copy todir="war">
+      <fileset dir="src/main/resources"/>
+    </copy>
+     <copy todir="war/WEB-INF">
+      <fileset dir="src/main/config" includes="web.xml"/>
+    </copy>
+    <copy todir="war/WEB-INF/classes">
+      <fileset dir="src/main/config" includes="log4j.xml"/>
+    </copy>
+  </target>
+
+  <target name="gwtc" depends="javac" description="GWT compile to JavaScript">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+      <classpath>
+        <pathelement location="src/main/java"/>
+        <path refid="project.class.path"/>
+      </classpath>
+      <!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+      <jvmarg value="-Xmx256M"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg value="com.intelliinvest.IntelliInvest"/>
+    </java>
+  </target>
+
+  <target name="hosted" depends="javac" description="Run hosted mode">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode">
+      <classpath>
+        <pathelement location="src/main/java"/>
+        <path refid="project.class.path"/>
+      </classpath>
+      <jvmarg value="-Xmx600M"/>
+      <arg value="-startupUrl"/>
+      <arg value="IntelliInvest.html"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg value="com.intelliinvest.IntelliInvest"/>
+    </java>
+  </target>
+
+  <target name="build" depends="gwtc" description="Build this project" />
+
+  <target name="war_dev" description="Create a war file">
+
+	<delete file="war/WEB-INF/classes/hibernate.cfg.xml" failonerror="false"/>
+	<delete file="war/WEB-INF/classes/intelliinvest.properties" failonerror="false"/>
+    <copy todir="war/WEB-INF/classes">
+      	<fileset dir="src/main/config/dev" includes="hibernate.cfg.xml,intelliinvest.properties"/>
+   	</copy>
+    <zip destfile="G:\\apache-tomcat-7.0.42\\webapps\\intelliinvest.war" basedir="war"/>
+  </target>
+
+  <target name="war_qa" description="Create a war file">
+	<delete file="war/WEB-INF/classes/hibernate.cfg.xml" failonerror="false"/>
+	<delete file="war/WEB-INF/classes/intelliinvest.properties" failonerror="false"/>
+   	<copy todir="war/WEB-INF/classes">
+   	  	<fileset dir="src/main/config/qa" includes="hibernate.cfg.xml,intelliinvest.properties"/>
+  		</copy>
+   	<zip destfile="G:\\apache-tomcat-7.0.42\\webapps\\qa\\intelliinvest.war" basedir="war"/>
+  </target>
+  
+  <target name="war_prod" description="Create a war file">
+	<delete file="war/WEB-INF/classes/hibernate.cfg.xml" failonerror="false"/>
+	<delete file="war/WEB-INF/classes/intelliinvest.properties" failonerror="false"/>
+   	<copy todir="war/WEB-INF/classes">
+   	  	<fileset dir="src/main/config/prod" includes="hibernate.cfg.xml,intelliinvest.properties"/>
+  		</copy>
+   	<zip destfile="G:\\apache-tomcat-7.0.42\\webapps\\prod\\intelliinvest.war" basedir="war"/>
+  </target>
+
+ <target name="war" depends="war_prod,war_qa,war_dev" description="Create a war file">
+ </target>
+	
+  <target name="clean" description="Cleans this project">
+    <delete dir="war" failonerror="false" />
+  </target>
+
+</project>

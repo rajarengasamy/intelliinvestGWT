@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+    <class name="OurOptionSuggestionData">
+   		<composite-id>
+      		<key-property name="code" column="code"/>
+      		<key-property name="instrument" column="instrument"/>
+      		<key-property name="expiryDate" column="expiryDate"/>
+      		<key-property name="optionPrice" column="optionPrice"/>
+    	</composite-id> 
+    	<property name="strikePrice" column="strikePrice"/>
+    	<property name="optionType" column="optionType"/>
+    </class>
+    
+</hibernate-mapping>

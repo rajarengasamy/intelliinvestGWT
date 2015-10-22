@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+	<class name="CommentData">
+
+		<id name="commentId" column="commentId">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="commenter" column="commenter" />
+		<property name="content" column="content" />
+		<property name="createdTime" column="createdTime" />
+		<property name="parentId" column="parentId" />
+		<property name="postId" column="postId" />
+	</class>
+</hibernate-mapping>

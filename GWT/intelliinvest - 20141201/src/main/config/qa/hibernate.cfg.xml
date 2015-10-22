@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+	<property name="connection.url">jdbc:mysql://localhost/intellii_qa</property>
+	<property name="connection.username">intellii_qa</property>
+	<property name="connection.password">intellii_qa2014</property>
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	<property name="hibernate.jdbc.batch_size">500</property>
+    <property name="hibernate.c3p0.min_size">7</property>
+    <property name="hibernate.c3p0.max_size">53</property>
+    <property name="hibernate.c3p0.timeout">100</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.idle_test_period">1000</property>
+    <property name="hibernate.c3p0.validate">true</property>
+    <property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+    <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+	<!-- Enable Hibernate's automatic session context management -->
+	<property name="current_session_context_class">thread</property>
+	<property name="hibernate.cache.use_second_level_cache">false</property>
+	<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+	<mapping resource="com/intelliinvest/client/data/EODChartData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/EODSignalChartData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/EODVolumeChartData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/ChatData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/ManagePortfolioData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/OurSuggestionData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/OurOptionSuggestionData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/SimulationData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/StockDetailData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/StockPriceData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/TradingAccountData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/UserDetailData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/IdValueData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/RiskReturnMatrixData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/PaymentData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/Posts.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/Comments.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/BhavData.hbm.xml"/>
+	<mapping resource="com/intelliinvest/client/data/SignalComponents.hbm.xml"/>
+</session-factory>
+</hibernate-configuration>

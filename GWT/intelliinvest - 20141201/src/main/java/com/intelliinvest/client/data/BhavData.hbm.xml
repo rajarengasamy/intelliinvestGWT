@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.client.data">
+
+	<class name="BhavData">
+	    	
+		<composite-id>
+      		<key-property name="symbol" column="symbol"/>
+      		<key-property name="timeStamp" column="timeStamp"/>
+    	</composite-id> 
+
+		<property name="exchange" column="exchange" />
+		<property name="series" column="series" />
+		<property name="open" column="open" />
+		<property name="high" column="high" />
+		<property name="low" column="low" />
+		<property name="close" column="close" />
+		<property name="last" column="last" />
+		<property name="prevClose" column="prevClose" />
+		<property name="totTrdQty" column="totTrdQty" />
+		<property name="totTrdVal" column="totTrdVal" />
+		<property name="totalTrades" column="totalTrades" />
+		<property name="isin" column="isin" />
+	</class>
+</hibernate-mapping>
