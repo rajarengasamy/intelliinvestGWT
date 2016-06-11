@@ -1,0 +1,4 @@
+And request should have this json object.
+{"username": "","mail": "","phone": "","userId": "yogeshgulati","password":"","activationCode":"ACT41008"}
+
+{"userId": "user1012","managePortfolioDatas": "[{"date": "1461868200000","code": "GAIL","cp": "0","amount": "0",  "todaysPnl": "0","realisedPnl": "0","currentPrice": "0","remainingQuantity": "1","direction": "Buy","quantity": "1",  "price": "4.3","unrealisedPnl": "-4.3","totalAmount": "4.3"}]"}
